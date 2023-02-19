@@ -107,10 +107,29 @@ var calculateAge = ()=>{
   let years,months,days, hours, minutes, seconds;
   setInterval(function(){
     var current_date = new Date();
+    var month_now = current_date.getMonth()
+    var date_now = current_date.getDate()
     AGE = current_date.getYear() - birth_date.getYear();
+    var m = month_now - birth_date.getMonth();
+    if (month_now >= birth_date.getMonth())
+        var month_age = month_now - birth_date.getMonth();
+    else {
+        AGE--;
+        var month_age = 12 + month_now - birth_date.getMonth();
+    }
+    if (date_now >= birth_date.getDate())
+        var date_age = date_now - birth_date.getDate();
+    else {
+        month_age--;
+        var date_age = 31 + date_now - birth_date.getDate();
+        if (month_age < 0) {
+            month_age = 11;
+            AGE--;
+        }
+    }
     age_year.innerHTML = pad(AGE);
-    age_months.innerHTML = pad(Math.abs(current_date.getMonth() - birth_date.getMonth()));
-    age_days.innerHTML = pad(Math.abs(current_date.getDate() - birth_date.getDate()));
+    age_months.innerHTML = pad(month_age);
+    age_days.innerHTML = pad(date_age);
     age_hours.innerHTML = pad(Math.abs(current_date.getHours() - birth_date.getHours()));
     age_minutes.innerHTML = pad(Math.abs(current_date.getMinutes() - birth_date.getMinutes()));
     age_seconds.innerHTML = pad(Math.abs(current_date.getSeconds() - birth_date.getSeconds()));
