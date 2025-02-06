@@ -50,7 +50,7 @@ a{
     width: 90%;
     background: #ffffffc7;
     transition: all 1s;
-    margin: 14% auto;
+    margin: 2% auto;
     padding: 30px;  
     text-align: center;
     position: relative;
@@ -73,18 +73,24 @@ a{
     background: white;
     padding: 2px 23px;
 }
-#socil-icons{
+#socil-icons {
     padding: 0;
     color: #585858;
+    margin-bottom: 2rem; /*  Отступ снизу */
 }
 #socil-icons li{
     display: inline;
     margin: 0px 5px;
 }
- 
+
 #socil-icons .iconi{
     font-size: 30px;
     color: black !important;
+    transition: transform 0.2s ease-in-out; /*  Плавное увеличение при наведении */
+}
+
+#socil-icons .iconi:hover { /*  Увеличение иконки при наведении */
+    transform: scale(1.2);
 }
 
 .italic-larger-txt{
@@ -105,15 +111,8 @@ a{
     font-weight: bolder;
   }
 
-  .footer{
-    z-index: 1000;
-    text-align: center; 
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;   
-    text-align: center;
-    margin-bottom: 9px;
+  .footer {
+    margin-top: 3rem; /* Добавляем отступ сверху */
   }
   @media  (max-width:1000px){
       #meInTheWorld{

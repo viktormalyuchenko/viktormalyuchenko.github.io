@@ -32,38 +32,38 @@ var getRndInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
-randomWidth();
+// randomWidth();
 
-var interval = setInterval(() => {
-  randomWidth();
-}, NABIZ);
+// var interval = setInterval(() => {
+//   randomWidth();
+// }, NABIZ);
 
-let stopbtn = document.querySelector(".btn-stop");
+// let stopbtn = document.querySelector(".btn-stop");
 
-stopbtn.addEventListener("mouseover", function () {
-  this.style.left = getRndInteger(-10, 99) + "%";
-  this.style.top = getRndInteger(-10, 99) + "%";
-  BODY.style.background = getRandomColor(98);
-  this.innerHTML = "Stop it :)";
-  this.style.bottom = "auto";
-  this.style.background = getRandomColor(50);
-  let thisthis = this;
+// stopbtn.addEventListener("mouseover", function () {
+//   this.style.left = getRndInteger(-10, 99) + "%";
+//   this.style.top = getRndInteger(-10, 99) + "%";
+//   BODY.style.background = getRandomColor(98);
+//   this.innerHTML = "Stop it :)";
+//   this.style.bottom = "auto";
+//   this.style.background = getRandomColor(50);
+//   let thisthis = this;
 
-  let olsunmu = getRndInteger(190,200);
-  if(olsunmu == 195 || olsunmu == 194){
-    setTimeout(function (){
-      thisthis.style.left = getRndInteger(-10, 99) + "%";
-      thisthis.style.top = getRndInteger(-10, 99) + "%";
-    },400)
-  }
+//   let olsunmu = getRndInteger(190,200);
+//   if(olsunmu == 195 || olsunmu == 194){
+//     setTimeout(function (){
+//       thisthis.style.left = getRndInteger(-10, 99) + "%";
+//       thisthis.style.top = getRndInteger(-10, 99) + "%";
+//     },400)
+//   }
 
-});
+// });
 
-stopbtn.addEventListener("click", function () {
-  clearInterval(interval);
-  BODY.style.background = "white";
-  this.style.opacity = "0";
-});
+// stopbtn.addEventListener("click", function () {
+//   clearInterval(interval);
+//   BODY.style.background = "white";
+//   this.style.opacity = "0";
+// });
 
 function detectMob() {
   return window.innerWidth <= 1000 && window.innerHeight <= 1000;
@@ -158,4 +158,3 @@ window.addEventListener("resize", function() {
 
   }
 }, false)
-
